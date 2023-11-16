@@ -1,7 +1,7 @@
 
 
 class Constants:
-
+    
     SCREEN_WIDTH, SCREEN_HEIGHT = 1300, 630
 
     BACKGROUND_COLOR = (126, 126, 126)

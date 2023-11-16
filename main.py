@@ -29,9 +29,9 @@ def button3func():
     map1.switch_start()
 
 Button(1125, 20, 150, 100, 'Output', button1func)
-Button(1125, 140, 150, 65, 'Clear Map', button2func)
-# Button(1125, 225, 65, 65, 'Left', print)
-# Button(1210, 225, 65, 65, 'Right', button3func)
+Button(1125, 140, 150, 65, 'Clear Map', button2func, "red")
+Button(1125, 225, 65, 65, 'Left', print)
+Button(1210, 225, 65, 65, 'Right', button3func)
 
 
 def get_events():

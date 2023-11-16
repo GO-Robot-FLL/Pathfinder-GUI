@@ -8,7 +8,7 @@ class Util:
         self.speedValuesStraight = (40, 50, 40)
         self.speedValuesCurve = (40, 40, 40)
 
-    def convert_cords(self, cords, map) -> list:
+    def convert_cords(smelf, cords, map) -> list:
         """ Converts pixel coordinates """
         """ (0, 0) is bottom left, scaling to cm applied"""
         return cords[0] * map.X_SCALE, (c.SCREEN_HEIGHT - cords[1]) * map.Y_SCALE
