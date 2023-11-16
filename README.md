@@ -1,2 +1,2 @@
 # Pathfinder-GUI
-Graphic interface for creating rounds
+Graphical user interface for creating rounds in FLL
