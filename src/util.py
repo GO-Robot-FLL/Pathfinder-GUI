@@ -8,7 +8,7 @@ class Util:
         self.speedValuesStraight = (40, 50, 40)
         self.speedValuesCurve = (40, 40, 40)
 
-    def convert_cords(smelf, cords, map) -> list:
+    def convert_cords(self, cords, map) -> list:
         """ Converts pixel coordinates """
         """ (0, 0) is bottom left, scaling to cm applied"""
         return cords[0] * map.X_SCALE, (c.SCREEN_HEIGHT - cords[1]) * map.Y_SCALE
@@ -16,9 +16,7 @@ class Util:
     def angleBetweenVectors(self, v1: Vector2D, v2: Vector2D) -> float:
         """ Calculates turning angle using vector angles """
         """ Checkes if y-Cord of v2 is over/under/on v1 based on dir """
-        # m1 = v1.getSlope()
-        # m2 = v2.getSlope()
-        # angle = round(np.degrees(np.arctan((m1 - m2)/(1 + m1 * m2))), 1)
+        
         angle = np.degrees(np.arccos(np.clip(np.dot(v1.get_unitVector(), v2.get_unitVector()), -1.0, 1.0)))
         invert = (-1 if 2 <= v1.dir <= 4 else 1)
 
@@ -40,7 +38,6 @@ class Util:
     def removeDupPoints(self, points: list[list]) -> list[list]:
         """ Removes duplicate points if angle is 180° or 0° """
         
-
         if points is None or len(points) == 0: raise Exception("No points specified!")
 
         previousVector = Vector2D(points[0], points[1])
@@ -60,14 +57,16 @@ class Util:
     def toSpikeCommands(self, points: list[list], map) -> None:
         """ Converts coordinates to Spike commands """
 
-
+        # Check if points are empty
         if points is None or len(points) == 0: 
             print("No points in round")
             return 
 
+        # Insert start point
         points.insert(0, list(self.convert_cords(([map.START_CORDS[0], map.START_CORDS[1] + 1]), map)))
         previousVector = Vector2D(points[0], points[1])
 
+        # Iterate through points
         for i, point in enumerate(points[2::], 2):
 
             try: 
@@ -75,8 +74,6 @@ class Util:
             except: 
                 continue
             
-            # print(previousVector.print(), v.print())
-            # print(v.values[1][1] == previousVector.calcLine(v.values[1][0]), previousVector.get_Slope(), v.get_Slope())
             print(f"db.gyroRotation({np.round(self.angleBetweenVectors(previousVector, v), 2)}, {self.speedValuesStraight[0]}, {self.speedValuesCurve[1]}, {self.speedValuesCurve[2]})")
             print(f"db.gyroStraightDrive({v.get_Length()}, {self.speedValuesStraight[0]}, {self.speedValuesStraight[1]}, {self.speedValuesStraight[2]})")
             
@@ -84,12 +81,14 @@ class Util:
             del v
 
 
-    def printCommands(self, coordinates, map):
+    def printCommands(self, coordinates, map) -> None:
         
+        # Check if coordinates are empty
         if all(len(round) == 1 for round in coordinates):
             print("Coordinates empty!")
             return 
-    
+
+        # Set origin from top left to bottom left
         coordinates = [[list(self.convert_cords(points, map)) for points in round] for round in coordinates]
         
         for i, round in enumerate(coordinates, 1):
