@@ -1,6 +1,7 @@
-# Welcome to Pathfinder 
+# Welcome to Pathfinder-GUI!
 
-We developed this solution for the **First Lego League** competition.
+We developed this solution for the **First Lego League** competition in order to accelerate our test process.
+
 It's an easy-to-use GUI where you can define paths on the playing map and convert them into code for your Robot. 
 
 The map is based on the official FLL map from the season 2022/2023 and will be updated automatically for each season.
@@ -23,7 +24,7 @@ The map is based on the official FLL map from the season 2022/2023 and will be u
 
 How to start the GUI:
 
-1. Clone repo from our **GitHub**
+1. Clone this repository from **GitHub**
 
 2. Run "main.py" file
 
@@ -37,10 +38,10 @@ How to start the GUI:
 - **"Right / Left"**: This function is currently under developement. It should set the starting point for the current path to the right or left Start Zone.
 
 ## Create a single path
-Just click on the map to add points. The shortest path between them is added automatically.
+Just click on the map to add points. The shortest path between two points using the euclidean distance is added automatically.
 
 ## Create multiple paths
-Use the Number Keys 1 - 6 select a new path with a different color. 
+Use  number keys 1-6 to select a new path with a different color. The new path also starts from the defined starting point. 
 
 
 # Reporting bugs 

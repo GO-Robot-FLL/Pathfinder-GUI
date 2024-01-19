@@ -34,8 +34,8 @@ def buttonClearfunc():
     del map1
     map1 = Map()
 
-# def buttonSwitchfunc():
-#     map1.switch_start()
+def buttonSwitchfunc():
+    map1.switch_start()
 
 
 # ############################## #
@@ -44,8 +44,8 @@ def buttonClearfunc():
 
 Button(1125, 20, 150, 100, 'Output', buttonOutputfunc)
 Button(1125, 140, 150, 65, 'Clear Map', buttonClearfunc, "red")
-# Button(1125, 225, 65, 65, 'Left', print)
-# Button(1210, 225, 65, 65, 'Right', buttonSwitchfunc)
+Button(1125, 225, 65, 65, 'Left', print)
+Button(1210, 225, 65, 65, 'Right', buttonSwitchfunc)
 
 
 def get_events():
