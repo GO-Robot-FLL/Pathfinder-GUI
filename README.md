@@ -7,6 +7,8 @@ It's an easy-to-use GUI where you can define paths on the playing map and conver
 The map is based on the official FLL map from the season 2022/2023 and will be updated automatically for each season.
 
 ![Pathfinder GUI GIF](https://github.com/GO-Robot-FLL/Pathfinder-GUI/blob/main/img/pathfinder.gif)
+*Live Demo of Pathfinder*
+
 
 # Requirements
 1. Pathfinder-GUI was made with **Python 3.12.0**. 
