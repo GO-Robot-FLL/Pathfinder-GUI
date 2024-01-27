@@ -9,7 +9,7 @@ from src.button import Button
 from src.object import Object
 
 
-# Set up window 
+# Setup window 
 pygame.display.set_caption("Pathfinder GUI")
 pygame.display.set_icon(pygame.image.load(os.getcwd() + r"\img\icon.png"))
 
@@ -34,8 +34,12 @@ def buttonClearfunc():
     del map1
     map1 = Map()
 
-def buttonSwitchfunc():
-    map1.switch_start()
+def buttonSwitchRight():
+    map1.switch_start("right")
+
+def buttonSwitchLeft():
+    map1.switch_start("left")
+
 
 
 # ############################## #
@@ -43,9 +47,10 @@ def buttonSwitchfunc():
 # ############################## #
 
 Button(1125, 20, 150, 100, 'Output', buttonOutputfunc)
-Button(1125, 140, 150, 65, 'Clear Map', buttonClearfunc, "red")
-Button(1125, 225, 65, 65, 'Left', print)
-Button(1210, 225, 65, 65, 'Right', buttonSwitchfunc)
+Button(1125, 140, 65, 65, 'Left', buttonSwitchLeft)
+Button(1210, 140, 65, 65, 'Right', buttonSwitchRight)
+Button(1125, 225, 150, 65, 'Clear Map', buttonClearfunc, "red")
+
 
 
 def get_events():
@@ -67,7 +72,6 @@ def get_events():
         # Switch round
         if event.type == pygame.KEYDOWN  and pygame.K_1 <= event.key <= pygame.K_6:
             map1.current_round = event.key - pygame.K_1
-
 
 def run():
     gameloop = True

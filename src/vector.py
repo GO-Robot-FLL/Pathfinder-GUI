@@ -1,6 +1,5 @@
-""" Imported by main.py """
-
 import numpy as np
+
 
 class Vector2D:
     def __init__(self, *args) -> None:
