@@ -12,12 +12,18 @@ class Vector2D:
     
 
     def print(self) -> None:
-        """ Prints the Vector """
+        """ 
+        Prints the Vector 
+        """
+
         print(f"Values={self.values}, Dir={self.dir}, Slope={self.get_Slope()}, Length={self.get_Length()}")
 
 
     def init_dir(self):
-        """ Initializes the direction of the vector """
+        """ 
+        Initializes the direction of the vector 
+        """
+
         if self.get_Slope() == np.Inf: self.dir = 1  # Up
         if self.get_Slope() == np.NINF: self.dir = 5 # Down
         if self.get_Slope() == 99999: self.dir = 3    # Right
@@ -29,22 +35,34 @@ class Vector2D:
     
 
     def get_Angle(self) -> float:
-        """ Returns angle between vector and x-axis in degrees """
+        """ 
+        Returns angle between vector and x-axis in degrees 
+        """
+
         return np.round(np.degrees(np.arctan(self.deltaY / self.deltaX)), 2)
 
 
     def get_Length(self) -> float:
-        """ Returns the magnitude (length) of the vector """
+        """ 
+        Returns the magnitude (length) of the vector 
+        """
+
         return np.round(np.sqrt(self.deltaY**2 + self.deltaX**2), 2)
     
 
     def get_unitVector(self) -> float:
-        """ Returns the unit vector """
+        """ 
+        Returns the unit vector 
+        """
+
         return (self.deltaX, self.deltaY) / np.linalg.norm((self.deltaX, self.deltaY))
     
 
     def get_Slope(self) -> float:
-        """ Returns the slope of the vector """
+        """ 
+        Returns the slope of the vector 
+        """
+
         try: 
             slope = self.deltaY / self.deltaX
             if slope == 0 and self.deltaX > 0: return 99999
@@ -56,6 +74,9 @@ class Vector2D:
 
 
     def calcLine(self, x: float) -> float:
-        """ Returns the y value of line equation of the vector """
+        """ 
+        Returns the y value of line equation of the vector 
+        """
+        
         return self.get_Slope() * x + self.values[0][1] - self.get_Slope() * self.values[0][0] 
 

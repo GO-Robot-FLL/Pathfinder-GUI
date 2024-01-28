@@ -41,7 +41,7 @@ How to start the GUI:
 
     *Important Note: The program only calculates the length and angle of the path. You can format the output as you like.*
 
-- **"Right / Left"**: Sets the starting point for the current path to the right or left Start Zone.
+- **"Right / Left"**: Sets the starting point for the current path to the right or left Start Zone. You can only set the starting point if the path is empty.
 
 - **"Clear Map"**: Clears all paths on the map. 
 

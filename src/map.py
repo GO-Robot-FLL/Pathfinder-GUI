@@ -46,16 +46,13 @@ class Map(Object):
 
 
         empty = len(self.coordinates[self.current_round]) == 1
-        
+
         if not empty:
             print("ERROR: Cannot switch start point: Round not empty!")
             return
         
-        if direction == "left":
-            self.coordinates[self.current_round][0] = [55, self.MAP_HEIGHT_PX - 20]
-            return 
-        
-        self.coordinates[self.current_round][0] = [900, self.MAP_HEIGHT_PX - 20]
+        self.START_CORDS = [55, self.MAP_HEIGHT_PX - 20] if direction == "left" else [900, self.MAP_HEIGHT_PX - 20]
+        self.coordinates[self.current_round][0] = self.START_CORDS
 
     
     

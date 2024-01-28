@@ -81,15 +81,15 @@ class Util:
             del v
 
 
-    def printCommands(self, coordinates, map) -> None:
+    def printCommands(self, map) -> None:
         
         # Check if coordinates are empty
-        if all(len(round) == 1 for round in coordinates):
+        if all(len(round) == 1 for round in map.coordinates):
             print("Coordinates empty!")
             return 
 
         # Set origin from top left to bottom left
-        coordinates = [[list(self.convert_cords(points, map)) for points in round] for round in coordinates]
+        coordinates = [[list(self.convert_cords(points, map)) for points in round] for round in map.coordinates]
         
         for i, round in enumerate(coordinates, 1):
             if len(round) != 1:

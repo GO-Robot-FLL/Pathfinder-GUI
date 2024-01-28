@@ -26,7 +26,7 @@ fpsClock = pygame.time.Clock()
 # ############################## #
 
 def buttonOutputfunc():
-    util.printCommands(map1.coordinates, map1)
+    util.printCommands(map1)
 
 def buttonClearfunc():
     global map1
@@ -34,23 +34,28 @@ def buttonClearfunc():
     del map1
     map1 = Map()
 
-def buttonSwitchRight():
+def buttonSwitchRightfunc():
     map1.switch_start("right")
 
-def buttonSwitchLeft():
+def buttonSwitchLeftfunc():
     map1.switch_start("left")
 
+def buttonImportfunc():
+    pass
 
+def buttonExportfunc():
+    pass
 
 # ############################## #
 #   Define button objects here   #
 # ############################## #
 
 Button(1125, 20, 150, 100, 'Output', buttonOutputfunc)
-Button(1125, 140, 65, 65, 'Left', buttonSwitchLeft)
-Button(1210, 140, 65, 65, 'Right', buttonSwitchRight)
+Button(1125, 140, 65, 65, 'Left', buttonSwitchLeftfunc)
+Button(1210, 140, 65, 65, 'Right', buttonSwitchRightfunc)
 Button(1125, 225, 150, 65, 'Clear Map', buttonClearfunc, "red")
-
+Button(1125, 450, 150, 65, 'Import', buttonImportfunc)
+Button(1125, 535, 150, 65, 'Export', buttonExportfunc)
 
 
 def get_events():
