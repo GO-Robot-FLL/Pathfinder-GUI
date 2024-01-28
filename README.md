@@ -1,4 +1,4 @@
-# Welcome to Pathfinder-GUI!
+# Welcome to Pathfinder-GUI! 
 
 We developed this solution for the **First Lego League** competition in order to accelerate our test process.
 
@@ -14,34 +14,31 @@ The map is currently based on the official FLL map from the Masterpiece season 2
 <br>
 
 # Requirements
-1. Pathfinder-GUI was made with **Python 3.12.0**. 
+Pathfinder-GUI was made with **Python 3.12.0**. Make sure to install the newest [version](https://www.python.org/downloads/).
 
-    Make sure to install the newest version of [Python](https://www.python.org/downloads/).
+You will also need the libraries Numpy and Pygame. Install those dependencies with a packet manager (e.g. **PIP**):
 
-2. Install Pygame and Numpy with pip:
-
-    ```
-    pip install pygame
-    pip install numpy
-    ```
+    https://numpy.org/install/
+    https://www.pygame.org/wiki/GettingStarted
 
 <br>
 
 # Usage 
 
-How to start the GUI:
+## How to start:
 
 1. Clone this repository from **GitHub**
 
 2. Run "main.py" file
 
 ## Buttons
+
 - **"Output"**: 
     Prints the code for all paths to the console.
 
     *Important Note: The program only calculates the length and angle of the path. You can format the output as you like.*
 
-- **"Right / Left"**: Sets the starting point for the current path to the right or left Start Zone. You can only set the starting point if the path is empty.
+- **"Right" / "Left"**: Sets the starting point for the current path to the right or left Start Zone. You can only set the starting point if the path is empty.
 
 - **"Clear Map"**: Clears all paths on the map. 
 
