@@ -26,6 +26,7 @@ class Button(Object):
 
         self.objects.append(self)
 
+
     def process(self):
 
         mousePos = pygame.mouse.get_pos()
@@ -33,7 +34,7 @@ class Button(Object):
         self.buttonSurface.fill(self.fillColors['normal'])
         if self.buttonRect.collidepoint(mousePos):
             self.buttonSurface.fill(self.fillColors['hover'])
-
+            
             if pygame.mouse.get_pressed(num_buttons=3)[0]:
                 self.buttonSurface.fill(self.fillColors['pressed'])
 

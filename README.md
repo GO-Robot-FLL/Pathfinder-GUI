@@ -4,7 +4,7 @@ We developed this solution for the **First Lego League** competition in order to
 
 It's an easy-to-use GUI where you can define paths on the playing map and convert them into code for your Robot. 
 
-The map is based on the official FLL map from the season 2022/2023 and will be updated automatically for each season.
+The map is currently based on the official FLL map from the Masterpiece season 2023/2024 and will be updated automatically for each season.
 
 <br>
 

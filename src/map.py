@@ -29,14 +29,25 @@ class Map(Object):
 
     
     def clear_map(self):
+        """
+        Clears the map
+        """
+
         print("SUCCESSFUL: Map cleared!")
         self.coordinates = [[self.START_CORDS] for _ in range(c.ROUND_NUM)]
 
         
     def switch_start(self, direction):
+        """
+        Switches the position of the start point 
+        -------
+        direction: "left" / "right"
+        """
+
+
+        empty = len(self.coordinates[self.current_round]) == 1
         
-        # If empty 
-        if len(self.coordinates[self.current_round]) > 1:
+        if not empty:
             print("ERROR: Cannot switch start point: Round not empty!")
             return
         
@@ -47,9 +58,12 @@ class Map(Object):
         self.coordinates[self.current_round][0] = [900, self.MAP_HEIGHT_PX - 20]
 
     
+    
     def process(self):
-
-        # Enumerate every round 
+        """
+        Draws the map with all paths 
+        """
+        
         for color_index, round_coords in enumerate(self.coordinates):
 
             color = c.LINE_COLORS[color_index]
