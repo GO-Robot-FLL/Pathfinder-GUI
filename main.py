@@ -9,12 +9,12 @@ from src.button import Button
 from src.object import Object
 
 
-# Setup window 
+# setup window 
 pygame.display.set_caption("Pathfinder GUI")
 pygame.display.set_icon(pygame.image.load(os.getcwd() + r"\img\icon.png"))
 
 
-# Initialize objects
+# initialize objects
 map1 = Map()
 util = Util()
 fpsClock = pygame.time.Clock()
@@ -60,10 +60,9 @@ Button(1125, 535, 150, 65, 'Export', buttonExportfunc)
 
 def get_events():
 
-    # Get events
+    # get events
     for event in pygame.event.get():
 
-        # Exit Pathfinder
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
@@ -75,7 +74,7 @@ def get_events():
             map1.coordinates[map1.current_round].append(list(event.pos))
 
         # Switch round
-        if event.type == pygame.KEYDOWN  and pygame.K_1 <= event.key <= pygame.K_6:
+        if event.type == pygame.KEYDOWN and pygame.K_1 <= event.key <= pygame.K_6:
             map1.current_round = event.key - pygame.K_1
 
 def run():
