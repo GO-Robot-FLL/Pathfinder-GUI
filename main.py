@@ -11,7 +11,7 @@ from src.object import Object
 
 # setup window 
 pygame.display.set_caption("Pathfinder GUI")
-pygame.display.set_icon(pygame.image.load(os.getcwd() + r"\img\icon.png"))
+pygame.display.set_icon(pygame.image.load(os.path.join(os.getcwd(), "img", "icon.png")))
 
 
 # initialize objects
