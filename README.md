@@ -56,5 +56,5 @@ If you find a bug, kindly report it to go.robot@gmynasium-ottobrunn.de or open a
 
 # Credits
 Developers: Kaiwen Yang (lead developer)
-            Finn Grewe (lead developer
+            Finn Grewe (lead developer)
             Vedant Pandey (support developer)
