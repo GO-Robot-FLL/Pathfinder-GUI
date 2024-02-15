@@ -65,7 +65,7 @@ class Map(Object):
 
             color = c.LINE_COLORS[color_index]
 
-            # Draw start
+            # Draw starting point
             pygame.draw.circle(self.mapSurf, c.LINE_COLORS[self.current_round], round_coords[0], c.POINT_RADIUS)
             
             # Draw path
