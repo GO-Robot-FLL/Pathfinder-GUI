@@ -17,6 +17,7 @@ class Util:
         cords: list[int, int] - pixel coordinates
         map: Map - map object
         """
+        
         return cords[0] * map.X_SCALE, (c.SCREEN_HEIGHT - cords[1]) * map.Y_SCALE
     
 
@@ -28,15 +29,29 @@ class Util:
         
         angle = np.degrees(np.arccos(np.clip(np.dot(v1.get_unitVector(), v2.get_unitVector()), -1.0, 1.0)))
         invert = (-1 if 2 <= v1.dir <= 4 else 1)
-
-        if v1.dir == 1: return (-angle if v2.values[1][0] < v1.values[1][0] else angle) 
-        elif v1.dir == 5: return (angle if v2.values[1][0] < v1.values[1][0] else -angle) 
-
-        if v2.values[1][1] > v1.calcLine(v2.values[1][0]): return invert * angle
-        elif v2.values[1][1] < v1.calcLine(v2.values[1][0]): return -invert * angle
         
-        if v2.values[1][1] == v1.calcLine(v2.values[1][0]) and ((v2.values[1][0] < v1.values[1][0] and invert == -1) or (v2.values[1][0] > v1.values[1][0] and invert == 1)): return 180.0
-        elif v2.values[1][1] == v1.calcLine(v2.values[1][0]) and ((v2.values[1][0] > v1.values[1][0] and invert == -1) or (v2.values[1][0] < v1.values[1][0] and invert == 1)): return 0.0
+        # If v1 is vertical
+        if v1.dir == 1: 
+            return (-angle if v2.values[1][0] < v1.values[1][0] else angle) 
+        elif v1.dir == 5: 
+            return (angle if v2.values[1][0] < v1.values[1][0] else -angle) 
+
+        # Determine if v2 is over or under v1
+        if v2.values[1][1] > v1.calcLine(v2.values[1][0]): 
+            return invert * angle
+        elif v2.values[1][1] < v1.calcLine(v2.values[1][0]): 
+            return -invert * angle
+
+        # Edge case: v1 and v2 are parallel
+        if v2.values[1][1] == v1.calcLine(v2.values[1][0]) and ((v2.values[1][0] < v1.values[1][0] and invert == -1) or (v2.values[1][0] > v1.values[1][0] and invert == 1)): 
+            return 180.0
+        
+        elif v2.values[1][1] == v1.calcLine(v2.values[1][0]) and ((v2.values[1][0] > v1.values[1][0] and invert == -1) or (v2.values[1][0] < v1.values[1][0] and invert == 1)): 
+            return 0.0
+        
+        return angle
+        
+        
             
 
 

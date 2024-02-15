@@ -3,6 +3,11 @@ import numpy as np
 
 class Vector2D:
     def __init__(self, *args) -> None:
+        """
+        Each vector is defined by two points: (x1, y1) and (x2, y2)
+        Example: Vector2D((0, 0), (1, 1)) -> Vector from (0, 0) to (1, 1)
+        """
+        
         if len(args) == 0: self.values = (0, 0)
         else: self.values = args
         if self.values[0] == self.values[1]: raise Exception("Same start and end point")
