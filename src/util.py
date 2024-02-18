@@ -52,8 +52,6 @@ class Util:
         return angle
         
         
-            
-
 
     def removeDupPoints(self, points: list[list]) -> list[list]:
         """ 

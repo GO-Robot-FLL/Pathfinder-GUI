@@ -40,11 +40,11 @@ def buttonSwitchRightfunc():
 def buttonSwitchLeftfunc():
     map1.switch_start("left")
 
-def buttonImportfunc():
-    pass
+# def buttonImportfunc():
+#     pass
 
-def buttonExportfunc():
-    pass
+# def buttonExportfunc():
+#     pass
 
 # ############################## #
 #   Define button objects here   #
@@ -54,8 +54,8 @@ Button(1125, 20, 150, 100, 'Output', buttonOutputfunc)
 Button(1125, 140, 65, 65, 'Left', buttonSwitchLeftfunc)
 Button(1210, 140, 65, 65, 'Right', buttonSwitchRightfunc)
 Button(1125, 225, 150, 65, 'Clear Map', buttonClearfunc, "red")
-Button(1125, 450, 150, 65, 'Import', buttonImportfunc)
-Button(1125, 535, 150, 65, 'Export', buttonExportfunc)
+# Button(1125, 450, 150, 65, 'Import', buttonImportfunc)
+# Button(1125, 535, 150, 65, 'Export', buttonExportfunc)
 
 
 def get_events():
@@ -67,7 +67,7 @@ def get_events():
             pygame.quit()
             sys.exit()
         
-        # Place Point 
+        # Place point 
         mx, my = pygame.mouse.get_pos()
         inbounds = mx <= map1.MAP_WIDTH_PX and my <= map1.MAP_HEIGHT_PX
         if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1 and inbounds:
@@ -87,7 +87,7 @@ def run():
         
         get_events()
 
-        # Diplay objects on screen
+        # Display objects on screen
         for object in Object.objects:
             object.process()
         
