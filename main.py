@@ -41,7 +41,7 @@ def buttonSwitchLeftfunc():
     map1.switch_start("left")
 
 def buttonImportfunc():
-    util.importCoords()
+    util.importCoords(map1)
 
 def buttonExportfunc():
     util.exportCoords(map1)

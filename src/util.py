@@ -121,16 +121,21 @@ class Util:
                 print(f"Round: {i}:")
                 self.toSpikeCommands(round, map)
 
+
     def exportCoords(self, map):
         """
         Exports the content of coordinates to a new file
         """
 
-        # Check if file already exists
-        try: 
-            file = open("coordinates.txt", "x")
-        except Exception:
-            file = open("coordinates.txt", "w").close() # Open existing file and erase content
+
+        # Check if file already exists. If not, create a new file
+        fileIndex = 0
+        while True:
+            try: 
+                file = open(f"exports/coordinates{fileIndex}.txt", "x")
+                break
+            except FileExistsError:
+                fileIndex += 1
 
         for i, round in enumerate(map.coordinates, 1):
 
@@ -141,19 +146,19 @@ class Util:
             file.write(f"{i}\n")
             for point in round:
                 file.write(f"{point[0]} {point[1]}\n")
+
     
     def importCoords(self, map):
-        
+        """
+        Imports the coordinates from a file
+        """
+
         try:
-            file = open("coordinates.txt", "r+")
+            file = open("exports/coordinates.txt", "r+")
         except Exception:
             print("File not found!")
             return
-        
-        for line in file:
-            map.coordinates.append([list(map(int, point.split(" "))) for point in line.split("\n") if point != ""])
-        
-        pass
+
             
         
 
