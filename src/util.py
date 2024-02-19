@@ -115,9 +115,45 @@ class Util:
 
         # Set origin from top left to bottom left
         coordinates = [[list(self.convert_cords(points, map)) for points in round] for round in map.coordinates]
-        
+        print(coordinates)
         for i, round in enumerate(coordinates, 1):
             if len(round) != 1:
                 print(f"Round: {i}:")
                 self.toSpikeCommands(round, map)
+
+    def exportCoords(self, map):
+        """
+        Exports the content of coordinates to a new file
+        """
+
+        # Check if file already exists
+        try: 
+            file = open("coordinates.txt", "x")
+        except Exception:
+            file = open("coordinates.txt", "w").close() # Open existing file and erase content
+
+        for i, round in enumerate(map.coordinates, 1):
+
+            # If round is empty
+            if len(round) == 1:
+                continue
+
+            file.write(f"{i}\n")
+            for point in round:
+                file.write(f"{point[0]} {point[1]}\n")
+    
+    def importCoords(self, map):
+        
+        try:
+            file = open("coordinates.txt", "r+")
+        except Exception:
+            print("File not found!")
+            return
+        
+        for line in file:
+            map.coordinates.append([list(map(int, point.split(" "))) for point in line.split("\n") if point != ""])
+        
+        pass
+            
+        
 
