@@ -147,7 +147,7 @@ class Util:
             for point in round:
                 file.write(f"{point[0]} {point[1]}\n")
 
-    
+
     def importCoords(self, map):
         """
         Imports the coordinates from a file

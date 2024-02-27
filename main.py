@@ -40,11 +40,11 @@ def buttonSwitchRightfunc():
 def buttonSwitchLeftfunc():
     map1.switch_start("left")
 
-def buttonImportfunc():
-    util.importCoords(map1)
+# def buttonImportfunc():
+#     util.importCoords(map1)
 
-def buttonExportfunc():
-    util.exportCoords(map1)
+# def buttonExportfunc():
+#     util.exportCoords(map1)
 
 # ############################## #
 #   Define button objects here   #
@@ -54,8 +54,8 @@ Button(1125, 20, 150, 100, 'Output', buttonOutputfunc)
 Button(1125, 140, 65, 65, 'Left', buttonSwitchLeftfunc)
 Button(1210, 140, 65, 65, 'Right', buttonSwitchRightfunc)
 Button(1125, 225, 150, 65, 'Clear Map', buttonClearfunc, "red")
-Button(1125, 450, 150, 65, 'Import', buttonImportfunc)
-Button(1125, 535, 150, 65, 'Export', buttonExportfunc)
+# Button(1125, 450, 150, 65, 'Import', buttonImportfunc)
+# Button(1125, 535, 150, 65, 'Export', buttonExportfunc)
 
 
 def get_events():

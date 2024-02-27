@@ -16,11 +16,7 @@ The map is currently based on the officiaal FLL map from the Masterpiece season 
 # Requirements
 Pathfinder-GUI was made with **Python 3.12.0**. Make sure to install the newest [version](https://www.python.org/downloads/).
 
-You will also need the libraries Numpy and Pygame. Install those dependencies with a packet manager (e.g. **PIP**):
-
-    https://numpy.org/install/
-    https://www.pygame.org/wiki/GettingStarted
-
+Furthermore, please install the libraries listed in the "requirements.txt" file. 
 <br>
 
 # Usage 
@@ -55,6 +51,4 @@ Use  number keys 1-6 to select a new path with a different color. The starting p
 If you find a bug, kindly report it to go.robot@gmynasium-ottobrunn.de or open a pull request. We will try to fix it as soon as possible. If you have any questions regarding the code, please reach out to us using the same Email adress.
 
 # Credits
-Developers: Kaiwen Yang (lead developer)
-            Finn Grewe (lead developer)
-            Vedant Pandey (support developer)
+Developers: Kaiwen Yang, Finn Grewe, Vedant Pandey
