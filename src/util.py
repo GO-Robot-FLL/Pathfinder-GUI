@@ -152,12 +152,16 @@ class Util:
         """
         Imports the coordinates from a file
         """
+        
+        fileIndex = input("Enter file index: ")
 
         try:
-            file = open("exports/coordinates.txt", "r+")
+            file = open(f"exports/coordinates{fileIndex}.txt", "r+")
         except Exception:
             print("File not found!")
             return
+        
+        
 
             
         

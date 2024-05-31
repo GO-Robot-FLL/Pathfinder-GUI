@@ -20,7 +20,6 @@ util = Util()
 fpsClock = pygame.time.Clock()
 
 
-
 # ############################## #
 #  Define button functions here  #
 # ############################## #
@@ -90,11 +89,11 @@ def run():
         # Display objects on screen
         for object in Object.objects:
             object.process()
-        
+
         # Update 
         pygame.display.flip()
         fpsClock.tick(fps)
-    
+
 if __name__ == "__main__":
     run()
     

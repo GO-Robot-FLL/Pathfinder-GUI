@@ -51,4 +51,4 @@ Use  number keys 1-6 to select a new path with a different color. The starting p
 If you find a bug, kindly report it to go.robot@gmynasium-ottobrunn.de or open a pull request. We will try to fix it as soon as possible. If you have any questions regarding the code, please reach out to us using the same Email adress.
 
 # Credits
-Developers: Kaiwen Yang, Finn Grewe, Vedant Pandey
+Developers: @kaiwxn @Ultrawurzelzwerg
