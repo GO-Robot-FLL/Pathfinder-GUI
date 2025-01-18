@@ -8,8 +8,8 @@ from src.object import Object
 class Map(Object):
 
     def __init__(self):
-        
-        self.mapSurf = pygame.transform.scale(pygame.image.load(os.path.join(os.getcwd(), "img", "map.jpg")), (1100, 622))
+
+        self.mapSurf = pygame.transform.scale(pygame.image.load(os.path.join(os.getcwd(), "img", "map.PNG")), (1100, 622))
 
         # Map dimensions in px and cm
         self.MAP_HEIGHT_PX = self.mapSurf.get_height()

@@ -4,7 +4,7 @@ from src.object import Object
 
 
 class Button(Object):
-    def __init__(self, x, y, width, height, buttonText='Button', onclickFunction=None, fontColor = "black", onePress=False):
+    def __init__(self, x, y, width, height, normalColor, hoverColor, pressedColor, buttonText='Button', onclickFunction=None, fontColor = "black", onePress=False):
         self.x = x
         self.y = y
         self.width = width
@@ -12,14 +12,15 @@ class Button(Object):
         self.onclickFunction = onclickFunction
         self.onePress = onePress
         self.fillColors = {
-            'normal': '#ffffff',
-            'hover': '#666666',
-            'pressed': '#333333',
+            'normal': normalColor,
+            'hover': hoverColor,
+            'pressed': pressedColor,
         }
 
         self.buttonSurface = pygame.Surface((self.width, self.height))
         self.buttonRect = pygame.Rect(self.x, self.y, self.width, self.height)
 
+        self.font = pygame.font.SysFont('Verdana', 16)
         self.buttonSurf = self.font.render(buttonText, True, fontColor)
 
         self.alreadyPressed = False

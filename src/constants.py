@@ -2,9 +2,9 @@
 
 class Constants:
     
-    SCREEN_WIDTH, SCREEN_HEIGHT = 1300, 630
+    SCREEN_WIDTH, SCREEN_HEIGHT = 1100, 700
 
-    BACKGROUND_COLOR = (126, 126, 126)
+    BACKGROUND_COLOR = (35, 51, 57)
 
     LINE_COLORS = [(0, 0, 0), (255, 0, 0), (0, 255, 0), (0, 0, 255), (255, 255, 0), (0, 255, 255)]
 
@@ -12,3 +12,4 @@ class Constants:
 
     ROUND_NUM = 6
 
+    FPS = 30

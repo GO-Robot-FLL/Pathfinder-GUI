@@ -14,7 +14,7 @@ class Vector2D:
         self.deltaY = self.values[1][1] - self.values[0][1]
         self.deltaX = self.values[1][0] - self.values[0][0]
         self.init_dir()
-    
+
 
     def print(self) -> None:
         """ 
@@ -29,15 +29,15 @@ class Vector2D:
         Initializes the direction of the vector 
         """
 
-        if self.get_Slope() == np.Inf: self.dir = 1  # Up
-        if self.get_Slope() == np.NINF: self.dir = 5 # Down
+        if self.get_Slope() == np.inf: self.dir = 1  # Up
+        if self.get_Slope() == -np.inf: self.dir = 5 # Down
         if self.get_Slope() == 99999: self.dir = 3    # Right
         if self.get_Slope() == -99999: self.dir = 7    # Left
         if self.deltaX > 0 and self.deltaY > 0: self.dir = 2    # Top right
         if self.deltaX > 0 and self.deltaY < 0: self.dir = 4    # Bottom right
         if self.deltaX < 0 and self.deltaY < 0: self.dir = 6    # Bottom left
         if self.deltaX < 0 and self.deltaY > 0: self.dir = 8    # Top left
-    
+
 
     def get_Angle(self) -> float:
         """ 
@@ -74,8 +74,8 @@ class Vector2D:
             elif slope == 0 and self.deltaX < 0: return -99999
             else: return slope
         except ZeroDivisionError:
-            if self.deltaY >= 0: return np.Inf
-            else: return np.NINF
+            if self.deltaY >= 0: return np.inf
+            else: return -np.inf
 
 
     def calcLine(self, x: float) -> float:

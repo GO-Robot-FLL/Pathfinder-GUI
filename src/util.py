@@ -96,8 +96,8 @@ class Util:
             except: 
                 continue
             
-            print(f"db.gyroRotation({np.round(self.angleBetweenVectors(previousVector, v), 2)}, {self.speedValuesStraight[0]}, {self.speedValuesCurve[1]}, {self.speedValuesCurve[2]})")
-            print(f"db.gyroStraightDrive({v.get_Length()}, {self.speedValuesStraight[0]}, {self.speedValuesStraight[1]}, {self.speedValuesStraight[2]})")
+            print(f"await gyroRotation({np.round(self.angleBetweenVectors(previousVector, v), 2)}, {self.speedValuesStraight[0]}, {self.speedValuesCurve[1]}, {self.speedValuesCurve[2]})")
+            print(f"await gyroStraightDrive({v.get_Length()}, {self.speedValuesStraight[0]}, {self.speedValuesStraight[1]}, {self.speedValuesStraight[2]})")
             
             previousVector = v
             del v
@@ -115,7 +115,7 @@ class Util:
 
         # Set origin from top left to bottom left
         coordinates = [[list(self.convert_cords(points, map)) for points in round] for round in map.coordinates]
-        print(coordinates)
+
         for i, round in enumerate(coordinates, 1):
             if len(round) != 1:
                 print(f"Round: {i}:")
