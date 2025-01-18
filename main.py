@@ -2,8 +2,6 @@ import pygame
 import sys
 import os
 
-import pygame_gui
-
 from src.constants import Constants as c
 from src.util import Util
 from src.map import Map
