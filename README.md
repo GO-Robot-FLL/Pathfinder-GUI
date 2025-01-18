@@ -4,7 +4,7 @@
 
 We developed this solution for the [**First Lego League**](https://www.first-lego-league.org/de/) competition in order to accelerate our testing process. We hope that this tool will help you as well.
 
-The map is currently based on the officiaal FLL map from the Masterpiece season 2023/2024 and will be updated automatically for each season.
+The map is currently based on the official FLL map from the Submerged season 2024/2025 and will be updated automatically.
 
 <br>
 
@@ -16,7 +16,11 @@ The map is currently based on the officiaal FLL map from the Masterpiece season 
 # Requirements
 Pathfinder-GUI was made with **Python 3.12.0**. Make sure to install the newest [version](https://www.python.org/downloads/).
 
-Furthermore, please install the libraries listed in the "requirements.txt" file. 
+Furthermore, please install the libraries listed in the *requirements.txt* file.
+    
+```bash
+pip install -r requirements.txt
+```
 <br>
 
 # Usage 
@@ -26,6 +30,10 @@ Furthermore, please install the libraries listed in the "requirements.txt" file.
 1. Clone this repository from **GitHub**
 
 2. Run "main.py" file
+
+```bash
+python main.py
+```
 
 ## Buttons
 
