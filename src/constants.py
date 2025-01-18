@@ -12,4 +12,4 @@ class Constants:
 
     ROUND_NUM = 6
 
-    FPS = 60
+    FPS = 30

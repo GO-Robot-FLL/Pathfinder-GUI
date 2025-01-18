@@ -10,9 +10,10 @@ from src.map import Map
 from src.object import Object
 from src.constants import Constants
 from src.button import Button
+from src.text import Text
 
 # setup window 
-pygame.display.set_caption("Pathfinder GUI")
+pygame.display.set_caption("Pathfinder GUI: Submerged")
 pygame.display.set_icon(pygame.image.load(os.path.join(os.getcwd(), "img", "icon.png")))
 
 # initialize objects
@@ -37,11 +38,11 @@ def buttonSwitchLeftfunc():
 
 
 
-Button(312, 630, 65, 62, 'Left', buttonSwitchLeftfunc)
-Button(392, 630, 65, 62, 'Right', buttonSwitchRightfunc)
-Button(472, 630, 150, 62, 'Clear Map', buttonClearfunc)
-Button(637, 630, 150, 62, 'Output', buttonOutputfunc)
-
+Button(312, 630, 65, 62, '#ffffff', '#666666', '#333333', 'Left', buttonSwitchLeftfunc)
+Button(392, 630, 65, 62, '#ffffff', '#666666', '#333333','Right', buttonSwitchRightfunc)
+Button(472, 630, 150, 62,'#ff595e', '#8d0801', '#333333', 'Clear Map', buttonClearfunc)
+Button(637, 630, 150, 62,'#8ac926', '#008000', '#333333', 'Output', buttonOutputfunc)
+Text(1025, 685, "Credit: @GO Robot", fontColor="gray")
 
 def get_events():
 
@@ -65,9 +66,9 @@ def get_events():
 
 
 
+
 def run():
     gameloop = True
-
     # Main loop
     while gameloop:
         Object.screen.fill(c.BACKGROUND_COLOR)
