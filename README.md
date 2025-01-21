@@ -1,6 +1,6 @@
 # Welcome to Pathfinder-GUI! 
 
-> User-friendly GUI where you can define paths on the playing map and convert them into code for your Robot. 
+> GUI where you can plan paths on the playing map and convert them into code for your robot. 
 
 We developed this solution for the [**First Lego League**](https://www.first-lego-league.org/de/) competition in order to accelerate our testing process. We hope that this tool will help you as well.
 
